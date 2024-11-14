@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/tittle.ico" type="image">
+    <title>RUMAH SAKIT JAKARTA</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="Logo">
+            <span class="logo-text"></span>
+        </div>
+
+        <div class="info-container-header">
+            <div class="info-header">
+                <img src="img/location.ico" alt="Location" class="info-icon">
+                <a href="https://maps.app.goo.gl/vk2MRpN2uWXYNq5V9" class="text-header" target="_blank">Lokasi Kami</a>
+            </div>
+
+            <div class="info-header">
+                <img src="img/call.ico" alt="Call" class="info-icon">
+                <a href="http://wa.me/6289662880807" class="text-header" target="_blank">WhatsApp</a>
+            </div>
+
+            <div class="info-header">
+                <img src="img/ig.ico" alt="Instagram" class="info-icon">
+                <a href="https://www.instagram.com/mhmaddiqbll/" class="text-header" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link active" onclick="showPromoPopup()">Home</a></li>
+                <li class="nav-item"><a href="profil.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#fasilitas" class="nav-link">Fasilitas & Layanan</a></li>
+                <li class="nav-item"><a href="#informasi" class="nav-link">Informasi Lainnya</a></li>
+                <li class="nav-item"><a href="javascript:void(0);" class="nav-link" onclick="openPricePopup()">Lihat Harga Obat</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="javascript:void(0);" class="nav-link" onclick="openLoginPopup()">Login</a></li>
+                <li class="nav-item"><a href="javascript:void(0);" class="nav-link" onclick="openRegisterPopup()">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="promoPopup" class="promo-popup-container">
+        <div class="promo-popup-content">
+            <span class="close" onclick="closePromoPopup()">&times;</span>
+            <h2>Promo Spesial!</h2>
+            <p>Dapatkan diskon 20% untuk semua layanan kami. Gunakan kode promo: <strong>RSJAKARTA</strong></p>
+            <div class="button-container">
+                <button onclick="closePromoPopup()">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pricePopup" class="popup-container">
+        <div class="popup-content">
+            <span class="close" onclick="closePricePopup()">&times;</span>
+            <h2>Daftar Harga Obat</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Obat</th>
+                        <th>Harga (IDR)</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paracetamol</td>
+                        <td>5,000</td>
+                        <td>Obat untuk meredakan demam dan nyeri.</td>
+                    </tr>
+                    <tr>
+                        <td>Amoxicillin</td>
+                        <td>15,000</td>
+                        <td>Antibiotik untuk infeksi bakteri.</td>
+                    </tr>
+                    <tr>
+                        <td>Ibuprofen</td>
+                        <td>10,000</td>
+                        <td>Obat anti-inflamasi non-steroid untuk nyeri.</td>
+                    </tr>
+                    <tr>
+                        <td>Vitamin C</td>
+                        <td>8,000</td>
+                        <td>Suplementasi untuk meningkatkan daya tahan tubuh.</td>
+                    </tr>
+                    <tr>
+                        <td>Obat Batuk</td>
+                        <td>12,000</td>
+                        <td>Obat untuk meredakan batuk.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="loginPopup" class="popup-container">
+        <div class="popup-content">
+            <span class="close" onclick="closeLoginPopup()">&times;</span>
+            <h2>Login</h2>
+            <form onsubmit="event.preventDefault(); validateLogin();"> 
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerPopup" class="popup-container">
+        <div class="popup-content">
+            <span class="close" onclick="closeRegisterPopup()">&times;</span>
+            <h2>Register</h2>
+            <form onsubmit="event.preventDefault(); validateRegister();">
+                <div class="form-group">
+                    <label for="regUsername">Username:</label>
+                    <input type="text" id="regUsername" name="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" name="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Konfirmasi Password:</label>
+                    <input type="password" id="regConfirmPassword" name="regConfirmPassword" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="img/foto1.png" alt="Fasilitas 1">
+        </div>
+        <div class="slide">
+            <img src="img/foto2.png" alt="Fasilitas 2">
+        </div>
+        <div class="slide">
+            <img src="img/foto3.png" alt="Fasilitas 3">
+        </div>
+    </div>
+
+    <div class="text-mid">
+        <h1>
+            <span class="color1">LAYANAN</span> <span class="color2">UNGGULAN RS JAKARTA</span>
+        </h1>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="icon">
+                <img src="img/gigi.png" alt="Gigi" class="icon-image">
+            </div>
+            <div class="card-title"><span class="card-title-background">JAKARTA DENTAL CLINIC</span></div>
+            <p class="card-text">Jakarta Dental Clinic di Rumah Sakit Jakarta berupaya memberikan pelayanan terbaik yang berfokus pada kesehatan gigi dan mulut.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="img/tulang.png" alt="Tulang" class="icon-image">
+            </div>
+            <div class="card-title"><span class="card-title-background">JAKARTA ORTHOPEDIC CENTER</span></div>
+            <p class="card-text">Jakarta Orthopedic Center merupakan layanan unggulan Rumah Sakit Jakarta yang berfokus pada penanganan kesehatan tulang.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="img/mata.png" alt="Mata" class="icon-image">
+            </div>
+            <div class="card-title"><span class="card-title-background">KLINIK MATA JAKARTA AINI</span></div>
+            <p class="card-text">Klinik Mata Jakarta Aini di Rumah Sakit Jakarta berupaya memberika pelayanan terbaik berkaitan dengan kesehatan mata.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+    </div>
+
+    <div class="card-container" id="fasilitas">
+        <div class="card">
+            <div class="icon">
+                <img src="img/punggung.png" alt="Punggung" class="icon-image">
+            </div>
+            <div class="card-title"><span class="card-title-background">JAKARTA SIGMA BRAIN & SPINE CENTER</span></div>
+            <p class="card-text">Jakarta Sigma Brain & Spine Center adalah pusat layanan kesehatan khusus yang berfokus pada diagnosis dan perawatan kondisi terkait otak, tulang belakang, serta sistem saraf.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="img/pencernaan.png" alt="Pencernaan" class="icon-image">
+            </div>
+            <div class="card-title"><span class="card-title-background">ENDOSCOPY</span></div>
+            <p class="card-text">Endoscopy menawarkan layanan untuk diagnosis dan perawatan minimal invasif berbagai kondisi pencernaan, pernapasan, dan lainnya. Didukung oleh teknologi modern dan tim dokter spesialis berpengalaman.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="img/ginjal.png" alt="Ginjal" class="icon-image">
+            </div>
+            <div class="card-title"><span class="card-title-background">UROLOGY</span></div>
+            <p class="card-text">Urologi menyediakan layanan lengkap masalah seperti batu ginjal, infeksi saluran kemih, gangguan prostat, dan kesehatan reproduksi Dengan dukungan teknologi mutakhir dan tim dokter urologi berpengalaman.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+    </div>
+
+    <div class="text-mid">
+        <h1>
+            <span class="color1">FASILITAS DAN</span> <span class="color2">LAYANAN RS JAKARTA</span>
+        </h1>
+    </div>
+
+    <div class="grid-container" id="informasi">
+        <div class="grid-item">
+            <div class="icon"><img src="img/IGD.png" alt="UGD"></div>
+            <p>UGD</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/kamar.png" alt="Kamar Operasi"></div>
+            <p>KAMAR OPERASI</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/radiologi.png" alt="Radiologi"></div>
+            <p>RADIOLOGI</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/medical.png" alt="Medical Check Up"></div>
+            <p>MEDICAL CHECK UP</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/rawat.png" alt="Rawat Jalan"></div>
+            <p>RAWAT JALAN</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/darah.png" alt="Hemodialisa"></div>
+            <p>HEMODIALISA</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/lab.png" alt="Laboratorium"></div>
+            <p>LABORATORIUM</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/obat.png" alt="Sports Medicine"></div>
+            <p>SPORTS MEDICINE</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/rawat2.png" alt="Rawat Inap"></div>
+            <p>RAWAT INAP</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/rehab.png" alt="Rehabilitasi Medik"></div>
+            <p>REHABILITASI MEDIK</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/farmasi.png" alt="Farmasi"></div>
+            <p>FARMASI</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon"><img src="img/mental.png" alt="Jakarta Beauty & Health Clinic"></div>
+            <p>Jakarta Beauty & Health Clinic</p>
+        </div>
+    </div>
+
+    <div class="container-bot">
+        <div class="kolom-kiri">
+            <h2>Hubungi Kami</h2>
+            <ul class="ucul">
+                <li class="ulcul">WhatsApp 0896-6288-0807</li>
+                <li class="ulcul">Bantuan 0896-6288-0807</li>
+                <li class="ulcul">Lokasi Jl. Situ Indah No. 116 Kel. Tugu, Kec. Cimanggis</li>
+                <li class="ulcul">Email mhmaddiqbll@gmail.com</li>
+                <li class="ulcul">Email chokkabu0204@gmail.com</li>
+            </ul>
+        </div>
+    
+        <div class="kolom-kanan">
+            <h2>Layanan Unggulan</h2>
+            <ul class="ucul">
+                <li class="ulcul">Jakarta Dental Clinic</li>
+                <li class="ulcul">Jakarta Orthopedic Center</li>
+                <li class="ulcul">Klinik Mata Jakarta Aini</li>
+                <li class="ulcul">Jakarta Sigma Brain & Spine Center</li>
+                <li class="ulcul">Endoscopy</li>
+                <li class="ulcul">Urologi</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Copyright © 2020 - www.rsjakarta.co.id All rights reserved.</p>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007BFF; /* Mengubah warna header */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+}
+
+.company-profile {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px; /* Meningkatkan sudut membulat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Meningkatkan bayangan */
+    position: relative; /* Menjaga posisi relatif untuk gambar */
+    transition: transform 0.3s; /* Menambahkan efek transisi */
+}
+
+.company-profile:hover {
+    transform: scale(1.02); /* Efek zoom saat hover */
+}
+
+.company-image {
+    position: absolute; /* Mengatur posisi gambar */
+    top: 120px; /* Jarak dari atas, disesuaikan agar berada lebih jauh di bawah judul */
+    right: 20px; /* Jarak dari kanan */
+    max-width: 150px; /* Ukuran maksimum gambar */
+    border-radius: 5px; /* Sudut gambar membulat */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan pada gambar */
+}
+
+.company-profile.fade-in {
+    opacity: 1; /* Menjadi terlihat */
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+h2, h3 {
+    color: #333;
+}
+
+h2 {
+    border-bottom: 2px solid #007BFF; /* Mengubah warna garis bawah menjadi biru */
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #007BFF; /* Mengubah warna judul h3 */
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+footer {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: #007BFF; /* Warna link */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    transition: color 0.3s; /* Menambahkan efek transisi pada link */
+}
+
+a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+    color: #0056b3; /* Mengubah warna saat hover */
+}
